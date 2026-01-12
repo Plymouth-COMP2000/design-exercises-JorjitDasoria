@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/staff_nav_graph"
+    app:startDestination="@id/staffLoginFragment">
+
+    <fragment
+        android:id="@+id/staffLoginFragment"
+        android:name="com.example.comp2000_restaurant.StaffLoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_staffLoginFragment_to_staffDashboardFragment"
+            app:destination="@id/staffDashboardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/staffDashboardFragment"
+        android:name="com.example.comp2000_restaurant.StaffDashboardFragment"
+        android:label="fragment_staff_dashboard"
+        tools:layout="@layout/fragment_staff_dashboard" >
+        <action
+            android:id="@+id/action_staffDashboardFragment_to_staffMenuFragment"
+            app:destination="@id/staffMenuFragment" />
+        <action
+            android:id="@+id/action_staffDashboardFragment_to_staffReservationsFragment"
+            app:destination="@id/staffReservationsFragment" />
+        <action
+            android:id="@+id/action_staffDashboardFragment_to_staffAccountSettingsFragment"
+            app:destination="@id/staffAccountSettingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/staffMenuFragment"
+        android:name="com.example.comp2000_restaurant.StaffMenuFragment"
+        android:label="fragment_staff_menu"
+        tools:layout="@layout/fragment_staff_menu" >
+        <action
+            android:id="@+id/action_staffMenuFragment_to_staffManageItemFragment"
+            app:destination="@id/staffManageItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/staffManageItemFragment"
+        android:name="com.example.comp2000_restaurant.StaffManageItemFragment"
+        android:label="fragment_staff_manage_item"
+        tools:layout="@layout/fragment_staff_manage_item" />
+    <fragment
+        android:id="@+id/staffReservationsFragment"
+        android:name="com.example.comp2000_restaurant.StaffReservationsFragment"
+        android:label="fragment_staff_reservations"
+        tools:layout="@layout/fragment_staff_reservations" />
+    <fragment
+        android:id="@+id/staffAccountSettingsFragment"
+        android:name="com.example.comp2000_restaurant.StaffAccountSettingsFragment"
+        android:label="fragment_account_settings"
+        tools:layout="@layout/fragment_account_settings" />
+</navigation>

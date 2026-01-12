@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_staff_item_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="Menu Item Image"
+            android:scaleType="centerCrop"
+            tools:srcCompat="@drawable/pizza_pic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_staff_item_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="casual"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            tools:text="Pizza"
+            app:layout_constraintStart_toEndOf="@id/iv_staff_item_image"
+            app:layout_constraintEnd_toStartOf="@id/ib_edit_item"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_staff_item_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            tools:text="A thin crust base Design, pine nuts, rich creamy mozarella and sauce imported from spain "
+            android:textSize="10sp"
+            android:fontFamily="casual"
+            app:layout_constraintEnd_toStartOf="@id/ib_edit_item"
+            app:layout_constraintStart_toStartOf="@id/tv_staff_item_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_staff_item_name" />
+
+        <TextView
+            android:id="@+id/tv_staff_item_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="?attr/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            tools:text="£12.99"
+            app:layout_constraintStart_toStartOf="@id/tv_staff_item_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_staff_item_description"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageButton
+            android:id="@+id/ib_edit_item"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Edit Item"
+            app:srcCompat="@android:drawable/ic_menu_edit"
+            app:layout_constraintEnd_toStartOf="@id/ib_delete_item"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageButton
+            android:id="@+id/ib_delete_item"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Delete Item"
+            app:srcCompat="@android:drawable/ic_menu_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
