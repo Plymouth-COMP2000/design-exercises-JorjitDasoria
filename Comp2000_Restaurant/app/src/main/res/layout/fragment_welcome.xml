@@ -5,8 +5,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/light_green_gradient"
     tools:context=".WelcomeFragment">
+
+    <ImageView
+        android:id="@+id/iv_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:rotation="90"
+        android:scaleX="2.5"
+        android:scaleY="2.5"
+        android:scaleType="centerCrop"
+        android:src="@drawable/toast_slice"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#66000000" />
 
     <ImageView
         android:id="@+id/iv_logo"
@@ -24,11 +42,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="casual"
-        android:text="Restaurant Name"
+        android:text="BOOK!"
         android:textAppearance="?attr/textAppearanceHeadlineLarge"
         android:textColor="@color/white"
         android:textSize="32sp"
         android:textStyle="bold"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_logo" />
