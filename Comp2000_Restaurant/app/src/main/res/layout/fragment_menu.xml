@@ -34,7 +34,7 @@
         android:hint="Search Menu"
         app:hintTextAppearance="@style/MyHintStyle"
         app:startIconDrawable="@android:drawable/ic_menu_search"
-        app:boxCornerRadius="30dp"
+        app:cornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_menu_title">
@@ -49,25 +49,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_menu_items"
-        android:layout_width="408dp"
-        android:layout_height="761dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:paddingHorizontal="16dp"
-        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/til_search"
-        app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/item_menu" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-    android:id="@+id/bottom_navigation"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:menu="@menu/bottom_nav_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

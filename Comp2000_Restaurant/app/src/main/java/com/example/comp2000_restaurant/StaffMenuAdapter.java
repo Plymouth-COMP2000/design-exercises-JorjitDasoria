@@ -1,5 +1,6 @@
 package com.example.comp2000_restaurant;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +8,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
@@ -27,11 +29,7 @@ public class StaffMenuAdapter extends RecyclerView.Adapter<StaffMenuAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        MenuItem menuItem = menuItems.get(position);
-        holder.name.setText(menuItem.getName());
-        holder.description.setText(menuItem.getDescription());
-        holder.price.setText(String.format("£%.2f", menuItem.getPrice()));
-        holder.image.setImageResource(menuItem.getImageUrl());
+        holder.bind(menuItems.get(position));
     }
 
     @Override
@@ -39,13 +37,10 @@ public class StaffMenuAdapter extends RecyclerView.Adapter<StaffMenuAdapter.View
         return menuItems.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView image;
-        TextView name;
-        TextView description;
-        TextView price;
-        ImageButton editButton;
-        ImageButton deleteButton;
+        TextView name, description, price;
+        ImageButton editButton, deleteButton;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -55,6 +50,24 @@ public class StaffMenuAdapter extends RecyclerView.Adapter<StaffMenuAdapter.View
             price = itemView.findViewById(R.id.tv_staff_item_price);
             editButton = itemView.findViewById(R.id.ib_edit_item);
             deleteButton = itemView.findViewById(R.id.ib_delete_item);
+        }
+
+        public void bind(final MenuItem menuItem) {
+            name.setText(menuItem.getName());
+            description.setText(menuItem.getDescription());
+            price.setText(String.format("£%.2f", menuItem.getPrice()));
+            image.setImageResource(menuItem.getImageUrl());
+
+            editButton.setOnClickListener(v -> {
+                // Create a bundle to pass the menu item's ID
+                Bundle bundle = new Bundle();
+                bundle.putInt("menuItemId", menuItem.getId());
+                
+                // Navigate to the Edit screen, passing the ID
+                Navigation.findNavController(v).navigate(R.id.action_staffMenuFragment_to_editMenuItemFragment, bundle);
+            });
+
+            // You can add a click listener for the deleteButton here as well
         }
     }
 }
